@@ -35,7 +35,7 @@
 
   <div class="container hero-grid"><div class="hero-copy">
     <p class="eyebrow reveal">Waste management · Recycling · Clean energy</p>
-    <h1 class="reveal" style="--i:1">Turning waste into resources, and resources into energy.</h1>
+    <h1 class="reveal" style="--i:1">Turning waste into resources, and <span class="hero-title-accent">resources into energy.</span></h1>
     <p class="lead reveal" style="--i:2">JOGAT Green Inc. provides reliable, environmentally responsible waste services for homes, businesses, institutions, and industry. We also develop biogas and waste-to-energy solutions that reduce emissions and reliance on landfills.</p>
     <div class="hero-actions reveal" style="--i:3">
       <a class="btn btn-primary" href="#divisions">Explore Our Services</a>
@@ -140,7 +140,10 @@
           <button role="tab" id="tab-industrial" aria-controls="panel-industrial" aria-selected="false" tabindex="-1">Industrial</button>
           <button role="tab" id="tab-recycling" aria-controls="panel-recycling" aria-selected="false" tabindex="-1">Recycling &amp; Diversion</button>
         </div>
-        <button class="tab-rotation-toggle" type="button" aria-label="Pause automatic tab rotation" aria-pressed="false" hidden>Pause</button>
+        <button class="tab-rotation-toggle" type="button" aria-label="Toggle automatic tab rotation" title="Toggle automatic tab rotation" aria-pressed="false" hidden>
+          <svg class="rotation-pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zm6 0h4v14h-4z" /></svg>
+          <svg class="rotation-play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+        </button>
       </div>
 
       <!-- Residential -->

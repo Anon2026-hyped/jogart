@@ -214,8 +214,12 @@ ul, ol, dl { margin: 0; padding: 0; list-style: none; }
 .tablist button[aria-selected="true"] { color: var(--text); }
 .tablist button[aria-selected="true"]::after { transform: scaleX(1); }
 .tablist button:hover { color: var(--text); }
-.tab-rotation-toggle { flex: 0 0 auto; border: 0; background: none; color: var(--muted); font: 600 .9rem var(--font-body); padding: .6rem 0 .6rem .5rem; cursor: pointer; }
+.tab-rotation-toggle { flex: 0 0 auto; display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid var(--line); border-radius: 50%; background: var(--surface); color: var(--muted); cursor: pointer; transition: color .2s, border-color .2s, background-color .2s; }
 .tab-rotation-toggle:hover { color: var(--brand); }
+.tab-rotation-toggle svg { width: 15px; height: 15px; fill: currentColor; }
+.tab-rotation-toggle .rotation-play-icon { display: none; }
+.tab-rotation-toggle[aria-pressed="true"] .rotation-pause-icon { display: none; }
+.tab-rotation-toggle[aria-pressed="true"] .rotation-play-icon { display: block; }
 .tab-rotation-toggle[hidden] { display: none; }
 .tabpanel { animation: panelIn .5s var(--ease); }
 .tabpanel[hidden] { display: none; }
@@ -555,11 +559,12 @@ body.theme-fade *,body.theme-fade *::before,body.theme-fade *::after{transition:
 }
 
 /* ---- Type ---- */
-h1,h2,h3,h4{font-weight:500;letter-spacing:-.012em}
-h1{font-weight:500;letter-spacing:-.02em;line-height:1.06;font-size:clamp(2.5rem,5.2vw,4.1rem)}
+h1,h2,h3,h4{font-weight:500;letter-spacing:0}
+h1{font-weight:500;letter-spacing:0;line-height:1.06;font-size:clamp(2.5rem,5.2vw,4.1rem)}
 h2{font-weight:500;line-height:1.12}
 h3{font-weight:500}
 .hero h1{max-width:17ch}
+.hero-title-accent{color:var(--brass-light)}
 .eyebrow{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.18em}
 .num{font-family:var(--font-display);font-weight:300;font-size:2.1rem;line-height:1;color:var(--brass)}
 .scope-tag,.contact-details span{font-family:var(--font-body)}

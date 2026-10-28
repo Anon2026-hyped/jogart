@@ -154,9 +154,6 @@ export function initializeSite() {
     }, rotationDelay);
   }
   function syncRotationButton() {
-    const action = rotationPaused ? 'Resume' : 'Pause';
-    rotationButton.textContent = action;
-    rotationButton.setAttribute('aria-label', `${action} automatic tab rotation`);
     rotationButton.setAttribute('aria-pressed', String(rotationPaused));
   }
   rotationButton.hidden = reduceMotion;
