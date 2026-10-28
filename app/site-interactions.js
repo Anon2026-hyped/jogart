@@ -2,28 +2,16 @@
    JOGAT Green Inc. — prototype interactions
    ========================================================== */
 
-/* ---------- 1. IMAGE SOURCES — replace these to swap images ----------
-   Leave a value empty ('') to show the labelled placeholder.
-   Use a local path (e.g. 'assets/hero.jpg') or any image URL you have the right to use. */
-const svg=(a,b,x)=>'data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+a+'"/><stop offset="1" stop-color="'+b+'"/></linearGradient><pattern id="w" width="26" height="30" patternUnits="userSpaceOnUse"><rect x="6" y="8" width="14" height="16" fill="#9fc5d6"/></pattern></defs><rect width="800" height="600" fill="url(#g)"/><circle cx="650" cy="120" r="64" fill="#fff" opacity=".6"/><path d="M0 460Q200 400 400 450T800 430V600H0Z" fill="#2a9d62" opacity=".3"/><rect y="500" width="800" height="100" fill="#1b4d38"/><rect y="500" width="800" height="8" fill="#c8e86b" opacity=".7"/>'+x+'</svg>');
-const bin=(x,c,s=1)=>`<g transform="translate(${x} 500) scale(${s})"><path d="M-40-110h80l-8 110h-64z" fill="${c}"/><rect x="-46" y="-126" width="92" height="18" rx="6" fill="${c}"/><path d="M-12-62l12-16 12 16m-12-16v36" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>`;
-const house=x=>`<g transform="translate(${x} 500)"><rect x="-70" y="-120" width="140" height="120" fill="#f6f1e6"/><path d="M-86-116L0-190 86-116z" fill="#c9553d"/><rect x="-18" y="-70" width="36" height="70" fill="#7a5a3a"/><rect x="-55" y="-98" width="26" height="26" fill="#bfe3f2"/><rect x="29" y="-98" width="26" height="26" fill="#bfe3f2"/></g>`;
-const tower=(x,w,h)=>`<g transform="translate(${x} 500)"><rect y="${-h}" width="${w}" height="${h}" fill="#e6edf0"/><rect y="${-h}" width="${w}" height="${h}" fill="url(#w)"/></g>`;
-const truck=x=>`<g transform="translate(${x} 505)"><rect x="-150" y="-125" width="190" height="105" rx="8" fill="#2a9d62"/><path d="M48-95h58l30 42v33H48z" fill="#c8e86b"/><rect x="62" y="-82" width="36" height="28" fill="#bfe3f2"/><circle cx="-90" cy="-12" r="22" fill="#12261d"/><circle cx="85" cy="-12" r="22" fill="#12261d"/><path d="M-82-60l14-22 14 22m-14-22v46" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(-6 8)"/></g>`;
-const plant=x=>`<g transform="translate(${x} 500)"><rect x="-130" y="-120" width="260" height="120" fill="#e3eae6"/><path d="M-130-120l65-45v45l65-45v45l65-45v45z" fill="#cfd9d4"/><rect x="70" y="-250" width="34" height="130" fill="#b4c3ba"/><circle cx="90" cy="-270" r="24" fill="#fff" opacity=".8"/><rect x="-100" y="-80" width="44" height="80" fill="#1b4d38"/></g>`;
-const dome=x=>`<g transform="translate(${x} 500)"><path d="M-110 0v-80a110 100 0 0 1 220 0v80z" fill="#eef3ef"/><path d="M-110-80h220" stroke="#b4c3ba" stroke-width="6"/><path d="M10-150L-24-90h26l-10 56 40-70H6z" fill="#e3b93c"/></g>`;
-const tank=x=>`<g transform="translate(${x} 500)"><rect x="-60" y="-130" width="120" height="130" rx="14" fill="#cfe6d8"/><rect x="-60" y="-70" width="120" height="8" fill="#2a9d62"/></g>`;
-const crate=(x,y,c)=>`<rect x="${x}" y="${y}" width="60" height="44" rx="6" fill="${c}"/>`;
 const IMAGES = {
-  'hero': svg('#cdeedd','#f1faf4', tower(60,110,230)+tower(190,90,150)+bin(350,'#2a9d62')+bin(420,'#2f78b7')+truck(620)),
-  'residential': svg('#d6efe0','#f6fbf7', house(200)+house(500)+bin(350,'#2a9d62',1.1)+bin(690,'#2f78b7')),
-  'residential-2': svg('#e0f0e6','#f7fbf8', house(170)+truck(540)+crate(300,456,'#c99a5b')+crate(300,412,'#b7864a')),
-  'commercial': svg('#d8eaf2','#f3f9fb', tower(70,130,260)+tower(230,110,190)+tower(370,150,300)+bin(600,'#2a9d62')+bin(670,'#e3b93c')),
-  'industrial': svg('#dfe8e2','#f4f8f5', plant(250)+truck(620)+crate(80,456,'#c99a5b')),
-  'recycling': svg('#d4eedd','#f3faf5', bin(200,'#2f78b7',1.6)+bin(400,'#2a9d62',1.6)+bin(600,'#e3b93c',1.6)),
-  'energy': svg('#cfe8f0','#f1f9f4', dome(260)+tank(470)+tank(610)),
-  'about': svg('#d6efe0','#f6fbf7', truck(280)+house(580)+bin(710,'#2f78b7',.8)),
-  'consulting': svg('#e3f1e6','#f7fbf8', '<g transform="translate(260 500)"><rect y="-100" width="50" height="100" fill="#8fd3ac"/><rect x="70" y="-170" width="50" height="170" fill="#2a9d62"/><rect x="140" y="-250" width="50" height="250" fill="#1f7a4d"/><rect x="210" y="-330" width="50" height="330" fill="#c8e86b"/></g>')
+  'hero': '/images/Out_warehouse.jpg',
+  'residential': '/images/Residential.jpg',
+  'residential-2': '/images/Residential_waste_bin_pickup.jpg',
+  'commercial': '/images/In_warehouse.jpg',
+  'industrial': '/images/Out_warehouse.jpg',
+  'recycling': '/images/Recycling.jpg',
+  'energy': '/images/Power_Plants.jpg',
+  'about': '/images/Team_members.jpg',
+  'consulting': '/images/In_warehouse.jpg'
 };
 
 export function initializeSite() {
