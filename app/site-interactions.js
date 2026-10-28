@@ -138,6 +138,29 @@ export function initializeSite() {
   /* ---------- Tabs (arrow keys, Home/End) ---------- */
   const tabs = $('[data-tabs]');
   const tabBtns = $$('[role="tab"]', tabs);
+  const rotationButton = $('.tab-rotation-toggle', tabs);
+  const rotationDelay = 6000;
+  let rotationPaused = reduceMotion;
+  let rotationTimer;
+  function stopRotation() {
+    clearTimeout(rotationTimer);
+  }
+  function scheduleRotation() {
+    stopRotation();
+    if (rotationPaused || reduceMotion || document.hidden || tabs.matches(':hover') || tabs.querySelector('[role="tab"]:focus')) return;
+    rotationTimer = setTimeout(() => {
+      const currentIndex = tabBtns.findIndex(b => b.getAttribute('aria-selected') === 'true');
+      selectTab(tabBtns[(currentIndex + 1) % tabBtns.length]);
+    }, rotationDelay);
+  }
+  function syncRotationButton() {
+    const action = rotationPaused ? 'Resume' : 'Pause';
+    rotationButton.textContent = action;
+    rotationButton.setAttribute('aria-label', `${action} automatic tab rotation`);
+    rotationButton.setAttribute('aria-pressed', String(rotationPaused));
+  }
+  rotationButton.hidden = reduceMotion;
+  syncRotationButton();
   function selectTab(btn, focus) {
     tabBtns.forEach(b => {
       const on = b === btn;
@@ -146,7 +169,22 @@ export function initializeSite() {
       $('#' + b.getAttribute('aria-controls')).hidden = !on;
     });
     if (focus) btn.focus();
+    scheduleRotation();
   }
+  rotationButton.addEventListener('click', () => {
+    rotationPaused = !rotationPaused;
+    syncRotationButton();
+    scheduleRotation();
+  });
+  tabs.addEventListener('mouseenter', stopRotation);
+  tabs.addEventListener('mouseleave', scheduleRotation);
+  tabs.addEventListener('focusin', stopRotation);
+  tabs.addEventListener('focusout', () => {
+    requestAnimationFrame(() => {
+      if (!tabs.contains(document.activeElement)) scheduleRotation();
+    });
+  });
+  document.addEventListener('visibilitychange', scheduleRotation);
   tabBtns.forEach((btn, i) => {
     btn.addEventListener('click', () => selectTab(btn));
     btn.addEventListener('keydown', e => {
@@ -162,6 +200,7 @@ export function initializeSite() {
   $$('[data-tab-link]').forEach(a => a.addEventListener('click', () => {
     const t = $('#tab-' + a.dataset.tabLink); if (t) selectTab(t);
   }));
+  scheduleRotation();
 
   /* ---------- Pre-select inquiry topic from CTA buttons ---------- */
   const topic = $('#f-topic');
@@ -196,7 +235,7 @@ export function initializeSite() {
     status.textContent = '';
     const results = Object.values(rules).map(check);
     if (results.every(Boolean)) {
-      status.textContent = 'Thanks — your inquiry looks good. (Prototype only: no message was sent.)';
+      status.textContent = 'Your inquiry passed validation. This form does not send messages yet.';
       form.reset();
     } else {
       const first = Object.values(rules).find(r => !r.test(r.el.value));
