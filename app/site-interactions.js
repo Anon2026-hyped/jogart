@@ -176,6 +176,7 @@ export function initializeSite() {
   const rules = {
     name:    { el: $('#f-name'),  err: $('#e-name'),  test: v => v.trim().length >= 2, msg: 'Please enter your name.' },
     email:   { el: $('#f-email'), err: $('#e-email'), test: v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()), msg: 'Please enter a valid email address.' },
+    phone:   { el: $('#f-phone'), err: $('#e-phone'), test: v => /^\+?[\d\s().-]+$/.test(v.trim()) && (v.match(/\d/g) || []).length >= 7 && (v.match(/\d/g) || []).length <= 15, msg: 'Please enter a valid phone number with 7 to 15 digits.' },
     topic:   { el: $('#f-topic'), err: $('#e-topic'), test: v => v !== '', msg: 'Please choose a service.' },
     message: { el: $('#f-msg'),   err: $('#e-msg'),   test: v => v.trim().length >= 10, msg: 'Please add a few details (at least 10 characters).' }
   };
