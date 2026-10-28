@@ -207,7 +207,7 @@ export function initializeSite() {
     if (opt) topic.value = opt.value || opt.text;
   }));
 
-  /* ---------- Contact form (frontend demo — nothing is sent) ---------- */
+  /* ---------- Contact form: validate and hand off to WhatsApp ---------- */
   const form = $('#inquiry-form'), status = $('#form-status');
   const rules = {
     name:    { el: $('#f-name'),  err: $('#e-name'),  test: v => v.trim().length >= 2, msg: 'Please enter your name.' },
@@ -232,8 +232,17 @@ export function initializeSite() {
     status.textContent = '';
     const results = Object.values(rules).map(check);
     if (results.every(Boolean)) {
-      status.textContent = 'Your inquiry passed validation. This form does not send messages yet.';
-      form.reset();
+      const fields = new FormData(form);
+      const message = [
+        `Name: ${fields.get('name')}`,
+        fields.get('org') ? `Organization: ${fields.get('org')}` : '',
+        `Email: ${fields.get('email')}`,
+        `Phone: ${fields.get('phone')}`,
+        `Interested in: ${fields.get('topic')}`,
+        `Project details: ${fields.get('message')}`
+      ].filter(Boolean).join('\n');
+      status.textContent = 'Opening WhatsApp with your inquiry…';
+      window.location.assign(`https://wa.me/12049604045?text=${encodeURIComponent(message)}`);
     } else {
       const first = Object.values(rules).find(r => !r.test(r.el.value));
       if (first) first.el.focus();
