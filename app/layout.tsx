@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import SiteChrome from './site-chrome';
 
 export const metadata: Metadata = {
   title: 'JOGAT Green Inc. | Environmental services and business advisory',
@@ -26,9 +27,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>
-        {children}
-      </body>
+      <body><SiteChrome>{children}</SiteChrome></body>
     </html>
   );
 }
