@@ -56,7 +56,7 @@
     <p class="lead">JOGAT Green Inc. delivers waste management, recycling, biogas and sustainability consulting for homes, businesses, institutions and industry. Through JOGAT Consulting, we also provide the accounting, tax and financial advice that keeps those organizations on solid ground.</p>
     <div class="hero-actions">
       <a class="btn btn-lime" href="#contact">Request a quote <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-      <a class="btn btn-line" href="tel:+12049604045"><svg aria-hidden="true"><use href="#i-phone"/></svg> 204-960-4045</a>
+      <a class="btn btn-line" href="tel:{{phoneHref}}"><svg aria-hidden="true"><use href="#i-phone"/></svg> {{phoneLabel}}</a>
     </div>
   </div>
   <nav class="doors" aria-label="Our two practices">
@@ -80,8 +80,7 @@
       <h2>Resource efficiency, environmental protection and financial clarity, under one name.</h2>
     </div>
     <div class="group-text">
-      <p>We deliver innovative, reliable and environmentally responsible waste management solutions that promote resource efficiency, environmental protection and sustainable communities.</p>
-      <p>Our consulting practice extends that commitment into the back office, helping businesses, organizations and entrepreneurs achieve financial stability, operational efficiency and sustainable growth.</p>
+      <p>We bring environmental operations and financial expertise together to help organizations use resources responsibly, run efficiently and plan for long-term resilience.</p>
       <ul class="reach">
         <li><b>Homes</b>Households and multi-family communities</li>
         <li><b>Businesses</b>Offices, retail, restaurants and hospitality</li>
@@ -138,7 +137,7 @@
         </ul>
         <div class="benefits">
           <h4>Why choose JOGAT Green</h4>
-          <p style="color:var(--muted);margin:0;max-width:70ch">We combine dependable service, innovative waste management practices and a commitment to environmental stewardship to help create cleaner, healthier and more sustainable communities.</p>
+          <p class="benefits-intro">We combine dependable service, innovative waste management practices and a commitment to environmental stewardship to help create cleaner, healthier and more sustainable communities.</p>
         </div>
       </div>
 
@@ -284,8 +283,8 @@
       </div>
       <p>Organic waste is a valuable resource. Through anaerobic digestion, innovative technologies and strategic partnerships, we support the recovery of energy from food waste, agricultural residues, animal manure and other suitable biodegradable materials.</p>
     </div>
-    <figure class="energy-pano" style="margin:0 0 clamp(2.5rem,5vw,4rem)"><img data-img="bio2" alt="Aerial view of a JOGAT Green biogas facility with twelve digesters beside farmland"></figure>
-    <ol class="flow" style="list-style:none;padding:0;margin:0">
+    <figure class="energy-pano"><img data-img="bio2" alt="Aerial view of a JOGAT Green biogas facility with twelve digesters beside farmland"></figure>
+    <ol class="flow">
       <li><h3>Feedstock management</h3><p>Collection, segregation and preparation of suitable organic waste for biogas production.</p></li>
       <li><h3>Anaerobic digestion</h3><p>Converting biodegradable waste into biogas through controlled biological processes that operate without oxygen.</p></li>
       <li><h3>Renewable energy recovery</h3><p>Using biogas for electricity and heating, with potential upgrading into renewable natural gas (RNG).</p></li>
@@ -321,7 +320,7 @@
     <div>
       <span class="kicker">Environmental sustainability consulting</span>
       <h2>Smarter environmental strategies. Measurable results. Lasting impact.</h2>
-      <p style="color:var(--muted);font-size:1.08rem;margin-top:1.2rem">We help businesses, institutions, industries and communities minimize environmental impact, improve resource efficiency and achieve their sustainability goals.</p>
+      <p class="section-lede">We help businesses, institutions, industries and communities minimize environmental impact, improve resource efficiency and achieve their sustainability goals.</p>
       <ul class="esc-list">
         <li><b>GHG emissions auditing and assessment</b><span>Evaluating carbon footprints, identifying major emission sources and assessing emissions across Scope 1, Scope 2 and relevant Scope 3 activities.</span></li>
         <li><b>GHG emissions reduction strategies</b><span>Practical, measurable strategies to reduce carbon emissions, improve energy efficiency and support decarbonization goals.</span></li>
@@ -376,7 +375,7 @@
       </div>
     </div>
 
-    <figure class="biz-hero" style="margin:0 0 clamp(2.5rem,5vw,3.5rem)">
+    <figure class="biz-hero">
       <img data-img="acc" alt="JOGAT Consulting advisors reviewing financials with clients around a laptop">
       <figcaption>We go beyond managing numbers. We help you build a stronger financial future.</figcaption>
     </figure>
@@ -394,9 +393,9 @@
           <div class="panel-intro">
             <h3>Accounting and bookkeeping services</h3>
             <p>Reliable accounting that keeps your financial records accurate, your reporting transparent and your financial management effective.</p>
-            <a class="btn btn-gold" href="#contact" data-topic="Accounting and Bookkeeping" data-practice="business">Talk to an accountant</a>
+            <a class="btn btn-green" href="#contact" data-topic="Accounting and Bookkeeping" data-practice="business">Talk to an accountant</a>
           </div>
-          <ul class="svc" style="grid-template-columns:1fr">
+          <ul class="svc svc-single">
             <li><b>General ledger maintenance and transaction recording</b></li>
             <li><b>Accounts payable and receivable management</b></li>
             <li><b>Bank and credit card reconciliations</b></li>
@@ -414,7 +413,7 @@
           <div class="panel-intro">
             <h3>Tax planning, preparation and compliance</h3>
             <p>We help businesses and individuals navigate tax obligations, minimize tax risks and identify opportunities for tax efficiency.</p>
-            <a class="btn btn-gold" href="#contact" data-topic="Tax Planning, Preparation and Compliance" data-practice="business">Plan your taxes with us</a>
+            <a class="btn btn-green" href="#contact" data-topic="Tax Planning, Preparation and Compliance" data-practice="business">Plan your taxes with us</a>
           </div>
         </div>
         <h4 class="svc-title">What we provide</h4>
@@ -435,7 +434,7 @@
           <div class="panel-intro">
             <h3>Financial management and business advisory</h3>
             <p>We turn financial information into actionable insight that improves profitability, strengthens financial controls and supports sustainable growth.</p>
-            <a class="btn btn-gold" href="#contact" data-topic="Financial Management and Business Advisory" data-practice="business">Request advisory support</a>
+            <a class="btn btn-green" href="#contact" data-topic="Financial Management and Business Advisory" data-practice="business">Request advisory support</a>
           </div>
         </div>
         <h4 class="svc-title">What we provide</h4>
@@ -457,7 +456,7 @@
           <div class="panel-intro">
             <h3>Professional training and capacity development</h3>
             <p>Practical training for professionals, entrepreneurs and organizations that strengthens technical expertise, professional competence and organizational performance.</p>
-            <a class="btn btn-gold" href="#contact" data-topic="Professional Training and Capacity Development" data-practice="business">Ask about training</a>
+            <a class="btn btn-green" href="#contact" data-topic="Professional Training and Capacity Development" data-practice="business">Ask about training</a>
           </div>
         </div>
         <h4 class="svc-title">Programs</h4>
@@ -486,13 +485,7 @@
         <h3>Joseph Oluwadebi, PhD</h3>
         <p class="role">Principal Consultant, JOGAT Consulting</p>
         <p>Your financial success is our priority. We do more than manage financial records: we partner with you to strengthen financial performance, simplify business operations and create lasting value.</p>
-        <ul class="contact-lines">
-          <li><svg aria-hidden="true"><use href="#i-pin"/></svg><span>45 Hughes Crescent, Winnipeg, MB</span></li>
-          <li><svg aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+12049604045">204-960-4045</a></li>
-          <li><svg aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:consultancy@jogatgreenconsult.com">consultancy@jogatgreenconsult.com</a></li>
-          <li><svg aria-hidden="true"><use href="#i-web"/></svg><a href="https://www.jogatgreenconsult.com" target="_blank" rel="noopener">www.jogatgreenconsult.com</a></li>
-        </ul>
-        <a class="btn btn-gold" href="#contact" data-practice="business">Book a consultation</a>
+        <a class="btn btn-green" href="#contact" data-practice="business">Book a consultation</a>
       </div>
     </div>
   </div>
@@ -523,21 +516,20 @@
   <div class="wrap contact">
     <div>
       <h2>Let’s talk about your property, project or business.</h2>
-      <p style="color:var(--muted);font-size:1.08rem;margin-top:1.2rem">Whether you need routine collection, a diversion program, a biogas initiative, an emissions audit or help with your books and taxes, tell us what you need and we’ll follow up.</p>
+      <p class="section-lede">Whether you need routine collection, a diversion program, a biogas initiative, an emissions audit or help with your books and taxes, tell us what you need and we’ll follow up.</p>
+      <p class="contact-phone"><svg aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:{{phoneHref}}">{{phoneLabel}}</a></p>
       <div class="desk">
         <h3><svg class="mono" aria-hidden="true"><use href="#mono-g"/></svg>JOGAT Green Inc.</h3>
         <ul>
-          <li><svg aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+12049604045">204-960-4045</a></li>
-          <li><svg aria-hidden="true"><use href="#i-web"/></svg><a href="https://www.jogatgreen.com" target="_blank" rel="noopener">www.jogatgreen.com</a></li>
+          <li><svg aria-hidden="true"><use href="#i-web"/></svg><a href="https://{{greenWebsite}}" target="_blank" rel="noopener">{{greenWebsite}}</a></li>
         </ul>
       </div>
       <div class="desk gold">
         <h3><svg class="mono" aria-hidden="true"><use href="#mono-c"/></svg>JOGAT Consulting</h3>
         <ul>
-          <li><svg aria-hidden="true"><use href="#i-pin"/></svg><span>45 Hughes Crescent, Winnipeg, MB</span></li>
-          <li><svg aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+12049604045">204-960-4045</a></li>
-          <li><svg aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:consultancy@jogatgreenconsult.com">consultancy@jogatgreenconsult.com</a></li>
-          <li><svg aria-hidden="true"><use href="#i-web"/></svg><a href="https://www.jogatgreenconsult.com" target="_blank" rel="noopener">www.jogatgreenconsult.com</a></li>
+          <li><svg aria-hidden="true"><use href="#i-pin"/></svg><span>{{consultingAddress}}</span></li>
+          <li><svg aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:{{consultingEmail}}">{{consultingEmail}}</a></li>
+          <li><svg aria-hidden="true"><use href="#i-web"/></svg><a href="https://{{consultingWebsite}}" target="_blank" rel="noopener">{{consultingWebsite}}</a></li>
         </ul>
       </div>
     </div>
@@ -578,10 +570,8 @@
       <nav aria-label="Business advisory"><h4>Business advisory</h4><ul>
         <li><a href="#accounting">Accounting &amp; bookkeeping</a></li><li><a href="#tax">Tax planning &amp; compliance</a></li><li><a href="#advisory">Financial management</a></li><li><a href="#training">Training &amp; development</a></li></ul></nav>
       <div><h4>Contact</h4><ul>
-        <li><a href="tel:+12049604045">204-960-4045</a></li>
-        <li><a href="https://www.jogatgreen.com" target="_blank" rel="noopener">jogatgreen.com</a></li>
-        <li><a href="https://www.jogatgreenconsult.com" target="_blank" rel="noopener">jogatgreenconsult.com</a></li></ul></div>
+        <li><a href="#contact">Contact both practices</a></li></ul></div>
     </div>
-    <div class="foot-base"><span>© <span id="yr">2026</span> JOGAT Green Inc. All rights reserved.</span><span>Innovation. Sustainability. Environmental excellence.</span></div>
+    <div class="foot-base"><span>© <span id="yr"></span> JOGAT Green Inc. All rights reserved.</span><span>Innovation. Sustainability. Environmental excellence.</span></div>
   </div>
 </footer>
