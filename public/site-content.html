@@ -1,410 +1,587 @@
-<div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
-<div class="theme-toast" id="theme-toast" role="status" aria-live="polite"><span class="t-ico" id="toast-ico"></span><span><span id="toast-title">Dark mode on</span><small id="toast-sub">Easier on the eyes</small></span><i class="t-bar"></i></div>
-<a class="skip-link" href="#main">Skip to content</a>
+<!-- Monogram symbols: J in bronze over G (Green) or C (Consulting) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gJ" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D2AE6A"/><stop offset="1" stop-color="#94692F"/></linearGradient>
+  </defs>
+  <symbol id="mono-g" viewBox="0 0 48 48">
+    <path d="M38.5 14.5A17 17 0 1 0 41 27H28" fill="none" stroke="#2E9A4E" stroke-width="3.6" stroke-linecap="round"/>
+    <path d="M21 6h9M25.5 6v23c0 7-3.5 11-9.5 11" fill="none" stroke="url(#gJ)" stroke-width="3.6" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="mono-c" viewBox="0 0 48 48">
+    <path d="M39 14A17 17 0 1 0 39 34" fill="none" stroke="#2E9A4E" stroke-width="3.6" stroke-linecap="round"/>
+    <path d="M21 6h9M25.5 6v23c0 7-3.5 11-9.5 11" fill="none" stroke="url(#gJ)" stroke-width="3.6" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-web" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></g></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5L12 13l8.5-6.5"/></g></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+</svg>
 
-<header class="site-header" id="header">
-  <div class="container nav">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="header" id="header">
+  <div class="wrap nav">
     <a class="brand" href="#top" aria-label="JOGAT Green Inc. home">
-      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c7 3 11 8 11 14a11 11 0 0 1-22 0C5 11 9 6 16 3z" fill="currentColor"/><path d="M16 27V12m0 6 5-5m-5 9-5-5" stroke="var(--on-brand)" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
-      <span>JOGAT <b>Green</b> Inc.</span>
+      <svg class="mono" aria-hidden="true"><use href="#mono-g"/></svg>
+      <span class="brand-text"><b>JOGAT Green</b><small>Environmental services &amp; business advisory</small></span>
     </a>
-    <nav class="nav-links" id="nav-links" aria-label="Primary">
-      <a href="#divisions">Divisions</a>
-      <a href="#services">Waste Services</a>
-      <a href="#energy">Clean Energy</a>
-      <a href="#consulting">Consulting</a>
+    <nav class="links" id="links" aria-label="Main">
+      <a href="#environmental">Waste services</a>
+      <a href="#energy">Clean energy</a>
+      <a href="#sustainability">Sustainability</a>
+      <a href="#business" class="biz">Business advisory</a>
       <a href="#about">About</a>
-      <a class="btn btn-primary btn-sm nav-cta" href="#contact">Contact Our Team</a>
+      <a href="#contact" class="btn btn-lime">Request a quote</a>
     </nav>
-    <div class="nav-tools">
-      <div class="theme-wrap" id="theme-wrap"><button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
-        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z" fill="currentColor"/></svg>
-        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="currentColor"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M19 5l-2 2M7 17l-2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      </button><span class="theme-label" id="theme-label">Dark mode</span></div>
-      <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
-        <span></span><span></span><span></span>
+    <div class="tools">
+      <button class="icon-btn" id="theme" type="button" aria-label="Switch colour theme">
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></svg>
+      </button>
+      <button class="icon-btn menu-btn" id="menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="links">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </button>
     </div>
   </div>
 </header>
 
 <main id="main">
-
-<!-- ============ HERO ============ -->
+<!-- ===== HERO ===== -->
 <section class="hero" id="top">
-
-  <div class="container hero-grid"><div class="hero-copy">
-    <p class="eyebrow reveal">Waste management · Recycling · Clean energy</p>
-    <h1 class="reveal" style="--i:1">Turning waste into resources, and <span class="hero-title-accent">resources into energy.</span></h1>
-    <p class="lead reveal" style="--i:2">JOGAT Green Inc. provides reliable, environmentally responsible waste services for homes, businesses, institutions, and industry. We also develop biogas and waste-to-energy solutions that reduce emissions and reliance on landfills.</p>
-    <div class="hero-actions reveal" style="--i:3">
-      <a class="btn btn-primary" href="#divisions">Explore Our Services</a>
-      <a class="btn btn-ghost" href="#contact">Contact Our Team</a>
-    </div></div>
-  <div class="hero-art reveal" style="--i:2"><div class="media a" data-img="hero" role="img" aria-label="Outdoor waste processing facility with collection containers"></div><div class="badge"><i></i>Waste → Resource → Energy</div></div>
+  <img class="hero-img" data-img="hero" alt="JOGAT Green roll-off truck driving through the city beneath a steel bridge">
+  <div class="wrap hero-copy">
+    <h1>Cleaner communities. Stronger organizations.</h1>
+    <p class="lead">JOGAT Green Inc. delivers waste management, recycling, biogas and sustainability consulting for homes, businesses, institutions and industry. Through JOGAT Consulting, we also provide the accounting, tax and financial advice that keeps those organizations on solid ground.</p>
+    <div class="hero-actions">
+      <a class="btn btn-lime" href="#contact">Request a quote <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a class="btn btn-line" href="tel:+12049604045"><svg aria-hidden="true"><use href="#i-phone"/></svg> 204-960-4045</a>
+    </div>
   </div>
+  <nav class="doors" aria-label="Our two practices">
+    <a class="door" href="#environmental">
+      <svg class="mono" aria-hidden="true"><use href="#mono-g"/></svg>
+      <div><strong>Environmental services</strong><span>Waste collection, recycling, biogas and sustainability consulting from JOGAT Green.</span></div>
+      <i class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></i>
+    </a>
+    <a class="door" href="#business">
+      <svg class="mono" aria-hidden="true"><use href="#mono-c"/></svg>
+      <div><strong>Business advisory</strong><span>Accounting, tax, financial advisory and professional training from JOGAT Consulting.</span></div>
+      <i class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></i>
+    </a>
+  </nav>
 </section>
 
-<!-- ============ STATS BAND ============ -->
-<section class="stats-band" aria-label="Company at a glance">
-  <div class="container">
-    <ul class="hero-facts reveal" aria-label="Company at a glance">
-      <li><strong>6</strong><span>service divisions</span></li>
-      <li><strong>4</strong><span>customer segments</span></li>
-      <li><strong>Scope 1 to 3</strong><span>GHG assessment</span></li>
-    </ul>
-  </div>
-</section>
-
-<!-- ============ DIVISIONS OVERVIEW ============ -->
-<section class="section" id="divisions">
-  <div class="container">
-    <header class="section-head reveal">
-      <p class="eyebrow">What we do</p>
-      <h2>Six divisions. One goal: less waste, more value.</h2>
-      <p>We cover the full life of waste, from curbside collection to anaerobic digestion and emissions auditing, helping keep materials out of landfills.</p>
-    </header>
-
-    <div class="divisions">
-      <a class="division division-lead reveal" href="#services" data-tab-link="residential">
-        <div class="media" data-img="residential" data-label="Residential collection"></div>
-        <div class="division-body">
-          <span class="num">01</span>
-          <h3>Residential Waste Management</h3>
-          <p>Collection, recycling, bulk removal, and disposal for homeowners, residential properties, and multifamily communities.</p>
-          <span class="more">Learn more <i aria-hidden="true">→</i></span>
-        </div>
-      </a>
-      <a class="division reveal" style="--i:1" href="#services" data-tab-link="commercial">
-        <div class="media" data-img="commercial"></div>
-        <div class="division-body">
-          <span class="num">02</span>
-          <h3>Commercial &amp; Institutional</h3>
-          <p>We serve offices, retailers, schools, healthcare providers, hospitality businesses, and government agencies, with compliance and waste reduction built into every plan.</p>
-          <span class="more">Learn more <i aria-hidden="true">→</i></span>
-        </div>
-      </a>
-      <a class="division reveal" style="--i:2" href="#services" data-tab-link="industrial">
-        <div class="media" data-img="industrial"></div>
-        <div class="division-body">
-          <span class="num">03</span>
-          <h3>Industrial Waste Management</h3>
-          <p>We support manufacturing, construction, warehouses, and processing plants with safe handling and resource recovery.</p>
-          <span class="more">Learn more <i aria-hidden="true">→</i></span>
-        </div>
-      </a>
-      <a class="division reveal" href="#services" data-tab-link="recycling">
-        <div class="media" data-img="recycling"></div>
-        <div class="division-body">
-          <span class="num">04</span>
-          <h3>Recycling &amp; Waste Diversion</h3>
-          <p>Sorting, recycling, composting, electronic waste collection, and diversion programs that reduce landfill disposal.</p>
-          <span class="more">Learn more <i aria-hidden="true">→</i></span>
-        </div>
-      </a>
-      <a class="division division-energy reveal" style="--i:1" href="#energy">
-        <div class="media" data-img="energy"></div>
-        <div class="division-body">
-          <span class="num">05</span>
-          <h3>Biogas &amp; Waste-to-Energy</h3>
-          <p>Organic waste converted into renewable energy through anaerobic digestion and related technologies.</p>
-          <span class="more">Learn more <i aria-hidden="true">→</i></span>
-        </div>
-      </a>
-      <a class="division reveal" style="--i:2" href="#consulting">
-        <div class="media" data-img="consulting"></div>
-        <div class="division-body">
-          <span class="num">06</span>
-          <h3>Sustainability Consulting</h3>
-          <p>GHG auditing, reduction strategies, waste audits, compliance support and sustainability reporting.</p>
-          <span class="more">Learn more <i aria-hidden="true">→</i></span>
-        </div>
-      </a>
+<!-- ===== GROUP STATEMENT ===== -->
+<section class="sec">
+  <div class="wrap group">
+    <div>
+      <h2>Resource efficiency, environmental protection and financial clarity, under one name.</h2>
+    </div>
+    <div class="group-text">
+      <p>We deliver innovative, reliable and environmentally responsible waste management solutions that promote resource efficiency, environmental protection and sustainable communities.</p>
+      <p>Our consulting practice extends that commitment into the back office, helping businesses, organizations and entrepreneurs achieve financial stability, operational efficiency and sustainable growth.</p>
+      <ul class="reach">
+        <li><b>Homes</b>Households and multi-family communities</li>
+        <li><b>Businesses</b>Offices, retail, restaurants and hospitality</li>
+        <li><b>Institutions</b>Schools, healthcare and government</li>
+        <li><b>Industry</b>Manufacturing, construction and warehousing</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- ============ WASTE SERVICES (TABS) ============ -->
-<section class="section section-tint" id="services">
-  <div class="container">
-    <header class="section-head reveal">
-      <p class="eyebrow">Waste services</p>
-      <h2>Choose your sector to see how we help.</h2>
-    </header>
+<!-- ===== ENVIRONMENTAL: WASTE SERVICES ===== -->
+<section class="sec sec-tint" id="environmental">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="kicker"><svg class="mono" aria-hidden="true"><use href="#mono-g"/></svg>JOGAT Green Inc.</span>
+        <h2>Waste management for every kind of property.</h2>
+      </div>
+      <p>Choose your sector to see what we collect, how we handle it, and how we help you keep more material out of landfill.</p>
+    </div>
 
-    <div class="tabs reveal" data-tabs>
-      <div class="tabs-controls">
-        <div class="tablist" role="tablist" aria-label="Waste service divisions">
-          <button role="tab" id="tab-residential" aria-controls="panel-residential" aria-selected="true">Residential</button>
-          <button role="tab" id="tab-commercial" aria-controls="panel-commercial" aria-selected="false" tabindex="-1">Commercial &amp; Institutional</button>
-          <button role="tab" id="tab-industrial" aria-controls="panel-industrial" aria-selected="false" tabindex="-1">Industrial</button>
-          <button role="tab" id="tab-recycling" aria-controls="panel-recycling" aria-selected="false" tabindex="-1">Recycling &amp; Diversion</button>
-        </div>
-        <button class="tab-rotation-toggle" type="button" aria-label="Toggle automatic tab rotation" title="Toggle automatic tab rotation" aria-pressed="false" hidden>
-          <svg class="rotation-pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zm6 0h4v14h-4z" /></svg>
-          <svg class="rotation-play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
-        </button>
+    <div class="explorer" data-explorer>
+      <div class="tabs" role="tablist" aria-label="Waste services by sector">
+        <button class="tab" role="tab" id="t-residential" aria-controls="residential" aria-selected="true"><b>Residential</b><small>Homes and multi-family</small></button>
+        <button class="tab" role="tab" id="t-commercial" aria-controls="commercial" aria-selected="false" tabindex="-1"><b>Commercial &amp; institutional</b><small>Offices, retail, schools, healthcare</small></button>
+        <button class="tab" role="tab" id="t-industrial" aria-controls="industrial" aria-selected="false" tabindex="-1"><b>Industrial</b><small>Manufacturing and construction</small></button>
+        <button class="tab" role="tab" id="t-recycling" aria-controls="recycling" aria-selected="false" tabindex="-1"><b>Recycling &amp; diversion</b><small>For every customer</small></button>
       </div>
 
       <!-- Residential -->
-      <div class="tabpanel" role="tabpanel" id="panel-residential" aria-labelledby="tab-residential">
-        <div class="panel-grid">
+      <div class="panel" role="tabpanel" id="residential" aria-labelledby="t-residential" tabindex="0">
+        <div class="panel-top">
+          <div class="gallery">
+            <figure><img data-img="res" alt="JOGAT Green collection truck lifting a blue recycling cart on a residential street"></figure>
+          </div>
           <div class="panel-intro">
-            <h3>Cleaner homes. Greener neighbourhoods.</h3>
-            <p>We provide reliable, responsible waste services for homeowners, residential properties, and multifamily communities. Our services keep neighborhoods clean while supporting recycling and waste reduction.</p>
-            <div class="media panel-media" data-img="residential-2" data-label="Bulk &amp; renovation waste"></div>
-            <a class="btn btn-primary btn-sm" href="#contact" data-inquiry="Residential Waste Management">Request residential service</a>
+            <h3>Cleaner homes. Greener neighbourhoods. Sustainable communities.</h3>
+            <p>We provide reliable, efficient and environmentally responsible waste collection, recycling, bulk waste removal and disposal for homeowners, residential properties and multi-family communities.</p>
+            <p>Our services keep homes and neighbourhoods clean while promoting recycling, waste reduction and environmental sustainability.</p>
+            <p class="sig">Your partner in cleaner and greener living.</p>
+            <a class="btn btn-green" href="#contact" data-topic="Residential Waste Management">Request residential service</a>
           </div>
-          <div class="service-list">
-            <details open><summary>Household Waste Collection</summary><p>Convenient and responsible collection and disposal of residential waste.</p></details>
-            <details><summary>Recycling Services</summary><p>Collection and management of recyclable materials to minimize landfill disposal.</p></details>
-            <details><summary>Organic &amp; Yard Waste Management</summary><p>Collection of biodegradable waste for composting and resource recovery.</p></details>
-            <details><summary>Bulk Waste &amp; Junk Removal</summary><p>Removal of unwanted furniture, appliances and oversized household items.</p></details>
-            <details><summary>Renovation Waste Removal</summary><p>Collection and responsible disposal of waste from home renovations and improvement projects.</p></details>
-            <details><summary>Dumpster &amp; Waste Bin Rentals</summary><p>Flexible waste container solutions for residential cleanouts and renovation projects.</p></details>
-            <details><summary>Multifamily Residential Waste Management</summary><p>Customized collection for apartments, condominiums, and residential complexes.</p></details>
-            <details><summary>Seasonal and On Demand Collection</summary><p>Flexible pickup for moving, spring cleaning, and other household needs.</p></details>
-          </div>
+        </div>
+        <h4 class="svc-title">What we provide</h4>
+        <ul class="svc">
+          <li><b>Household waste collection</b><span>Convenient and responsible collection and disposal of residential waste.</span></li>
+          <li><b>Recycling services</b><span>Collection and management of recyclable materials to minimize landfill disposal.</span></li>
+          <li><b>Organic and yard waste management</b><span>Collection of biodegradable waste for composting and resource recovery.</span></li>
+          <li><b>Bulk waste and junk removal</b><span>Removal of unwanted furniture, appliances and oversized household items.</span></li>
+          <li><b>Renovation waste removal</b><span>Collection and responsible disposal of waste from home renovations and improvement projects.</span></li>
+          <li><b>Dumpster and waste bin rentals</b><span>Flexible waste container solutions for residential cleanouts and renovation projects.</span></li>
+          <li><b>Multi-family residential waste management</b><span>Customized collection for apartments, condominiums and residential complexes.</span></li>
+          <li><b>Seasonal and on-demand collection</b><span>Flexible pickup for moving, spring cleaning and special household needs.</span></li>
+        </ul>
+        <div class="benefits">
+          <h4>Why choose JOGAT Green</h4>
+          <p style="color:var(--muted);margin:0;max-width:70ch">We combine dependable service, innovative waste management practices and a commitment to environmental stewardship to help create cleaner, healthier and more sustainable communities.</p>
         </div>
       </div>
 
       <!-- Commercial -->
-      <div class="tabpanel" role="tabpanel" id="panel-commercial" aria-labelledby="tab-commercial" hidden>
-        <div class="panel-grid">
-          <div class="panel-intro">
-            <h3>Smart waste solutions. Cleaner facilities.</h3>
-            <p>We create tailored waste plans for offices, retail businesses, restaurants, schools, healthcare facilities, hospitality businesses, government agencies, and community organizations. Plans focus on efficient collection, recycling, waste reduction, and regulatory compliance.</p>
-            <div class="media panel-media" data-img="commercial" data-label="Commercial &amp; institutional facilities"></div>
-            <a class="btn btn-primary btn-sm" href="#contact" data-inquiry="Commercial and Institutional Waste Management">Request a business quote</a>
+      <div class="panel" role="tabpanel" id="commercial" aria-labelledby="t-commercial" tabindex="0" hidden>
+        <div class="panel-top">
+          <div class="gallery" data-gallery>
+            <figure><img data-img="com3" alt="JOGAT Green front-load dumpster beside a drive-thru restaurant"></figure>
+            <figcaption>Front-load dumpster service at a drive-thru restaurant</figcaption>
+            <div class="thumbs">
+              <button type="button" aria-pressed="true" data-src="com3" data-cap="Front-load dumpster service at a drive-thru restaurant" data-alt="JOGAT Green front-load dumpster beside a drive-thru restaurant"><img data-img="com3" alt=""><span class="sr">Show drive-thru dumpster</span></button>
+              <button type="button" aria-pressed="false" data-src="com2" data-cap="Separate garbage and cardboard containers at a retail plaza" data-alt="Two JOGAT Green semi-underground containers for garbage and cardboard at a retail plaza"><img data-img="com2" alt=""><span class="sr">Show retail plaza containers</span></button>
+              <button type="button" aria-pressed="false" data-src="com1" data-cap="Recycling bins at an office and institutional campus" data-alt="JOGAT Green containers outside a modern office building"><img data-img="com1" alt=""><span class="sr">Show office campus bins</span></button>
+            </div>
           </div>
-          <div class="service-list">
-            <details open><summary>Commercial Waste Collection &amp; Disposal</summary><p>Customized collection, handling and responsible disposal for offices, retail outlets, restaurants and commercial facilities.</p></details>
-            <details><summary>Institutional Waste Management</summary><p>Tailored services for educational institutions, healthcare facilities, government establishments and community organizations.</p></details>
-            <details><summary>Recycling &amp; Waste Diversion</summary><p>Integrated recycling, segregation and resource recovery to reduce landfill waste and promote a circular economy.</p></details>
-            <details><summary>Waste Bin &amp; Dumpster Rental</summary><p>Flexible container rental, placement and collection for routine and specialized needs.</p></details>
-            <details><summary>Waste Audits &amp; Sustainability Solutions</summary><p>Waste assessments, reduction strategies and advisory services to improve resource efficiency and environmental performance.</p></details>
+          <div class="panel-intro">
+            <h3>Smart waste solutions. Cleaner facilities. Sustainable operations.</h3>
+            <p>Effective waste management is essential to clean, safe and environmentally responsible workplaces. We provide customized solutions for offices, retail businesses, schools, healthcare facilities, hospitality establishments and other institutions.</p>
+            <p>Our integrated approach goes beyond collection and disposal, focusing on waste reduction, recycling, resource recovery and compliance as you move toward a circular economy.</p>
+            <p class="sig">Helping businesses reduce costs, improve efficiency and build a greener future.</p>
+            <a class="btn btn-green" href="#contact" data-topic="Commercial and Institutional Waste Management">Request a business quote</a>
           </div>
         </div>
-        <ul class="chips" aria-label="Commercial benefits">
-          <li>Cost efficiency</li><li>Regulatory compliance</li><li>Cleaner &amp; safer facilities</li><li>Better diversion</li><li>Customized schedules &amp; containers</li><li>Measurable sustainability performance</li>
+        <h4 class="svc-title">What we provide</h4>
+        <ul class="svc">
+          <li><b>Commercial waste collection and disposal</b><span>Customized collection, handling and responsible disposal for offices, retail outlets, restaurants and commercial facilities.</span></li>
+          <li><b>Institutional waste management</b><span>Tailored services for educational institutions, healthcare facilities, government establishments and community organizations.</span></li>
+          <li><b>Recycling and waste diversion</b><span>Integrated recycling, waste segregation and resource recovery to reduce landfill waste and promote a circular economy.</span></li>
+          <li><b>Waste bin and dumpster rental</b><span>Flexible container rental, placement and collection for routine and specialized needs.</span></li>
+          <li><b>Waste audits and sustainability solutions</b><span>Comprehensive waste assessments, reduction strategies and advisory services to improve resource efficiency and environmental performance.</span></li>
         </ul>
+        <div class="benefits">
+          <h4>Service benefits</h4>
+          <ul>
+            <li><i class="tick"><svg><use href="#i-check"/></svg></i><div><b>Cost efficiency</b>Optimized schedules, fewer unnecessary pickups and lower disposal costs.</div></li>
+            <li><i class="tick"><svg><use href="#i-check"/></svg></i><div><b>Regulatory compliance</b>Proper handling, segregation and disposal under applicable environmental regulations.</div></li>
+            <li><i class="tick"><svg><use href="#i-check"/></svg></i><div><b>Cleaner, safer facilities</b>Less accumulation, odours, sanitation concerns and workplace hazards.</div></li>
+            <li><i class="tick"><svg><use href="#i-check"/></svg></i><div><b>Better diversion</b>Recycling, reuse and resource recovery programs that reduce landfill waste.</div></li>
+            <li><i class="tick"><svg><use href="#i-check"/></svg></i><div><b>Customized, reliable service</b>Flexible schedules and right-sized containers for each facility.</div></li>
+            <li><i class="tick"><svg><use href="#i-check"/></svg></i><div><b>Measurable performance</b>Tracking of waste generation, recycling rates and diversion for sustainability reporting.</div></li>
+          </ul>
+        </div>
       </div>
 
       <!-- Industrial -->
-      <div class="tabpanel" role="tabpanel" id="panel-industrial" aria-labelledby="tab-industrial" hidden>
-        <div class="panel-grid">
-          <div class="panel-intro">
-            <h3>Efficient solutions. Safer operations.</h3>
-            <p>Tailored, environmentally responsible waste management for manufacturing facilities, construction sites, warehouses and processing plants, with an emphasis on workplace safety, regulatory compliance and sustainable resource management.</p>
-            <div class="media panel-media" data-img="industrial" data-label="Industrial &amp; construction operations"></div>
-            <a class="btn btn-primary btn-sm" href="#contact" data-inquiry="Industrial Waste Management">Discuss an industrial project</a>
+      <div class="panel" role="tabpanel" id="industrial" aria-labelledby="t-industrial" tabindex="0" hidden>
+        <div class="panel-top">
+          <div class="gallery" data-gallery>
+            <figure><img data-img="ind1" alt="Three JOGAT Green semi-underground containers at an industrial facility"></figure>
+            <figcaption>Semi-underground containers at an industrial site</figcaption>
+            <div class="thumbs">
+              <button type="button" aria-pressed="true" data-src="ind1" data-cap="Semi-underground containers at an industrial site" data-alt="Three JOGAT Green semi-underground containers at an industrial facility"><img data-img="ind1" alt=""><span class="sr">Show industrial containers</span></button>
+              <button type="button" aria-pressed="false" data-src="hero" data-cap="Roll-off container transport for large-scale removal" data-alt="JOGAT Green roll-off truck carrying a large container"><img data-img="hero" alt=""><span class="sr">Show roll-off truck</span></button>
+            </div>
           </div>
-          <div class="service-list">
-            <details open><summary>Industrial Waste Collection &amp; Disposal</summary><p>Collection, transportation, and responsible disposal of industrial waste that is not classified as hazardous, including manufacturing and processing residues.</p></details>
-            <details><summary>Construction &amp; Demolition Waste Management</summary><p>Collection, segregation, recycling and disposal of construction debris, concrete, wood, metals and other suitable demolition materials.</p></details>
-            <details><summary>Industrial Recycling &amp; Resource Recovery</summary><p>Recovery and recycling of metals, plastics, cardboard, packaging and other reusable industrial resources.</p></details>
-            <details><summary>Containers &amp; Dumpster Rentals</summary><p>Appropriately sized bins, roll-off containers and dumpsters for industrial facilities and construction projects.</p></details>
-            <details><summary>Industrial Waste Audits &amp; Sustainability Solutions</summary><p>Waste stream assessments, minimization planning, diversion strategies and environmental advisory services.</p></details>
+          <div class="panel-intro">
+            <h3>Efficient waste solutions. Safer operations. Sustainable industries.</h3>
+            <p>We provide tailored, environmentally responsible waste management for manufacturing facilities, construction sites, warehouses, processing plants and other industrial operations.</p>
+            <p>Our approach emphasizes safe handling, efficient collection, responsible disposal, resource recovery and environmental compliance.</p>
+            <p class="sig">Advancing industrial efficiency through sustainable waste management.</p>
+            <a class="btn btn-green" href="#contact" data-topic="Industrial Waste Management">Discuss an industrial project</a>
           </div>
         </div>
-        <ul class="chips" aria-label="Industrial benefits">
-          <li>Reduced waste costs</li><li>Safer workplaces</li><li>Compliance support</li><li>Resource recovery</li><li>Minimal operational disruption</li><li>Waste tracking &amp; reporting</li>
+        <h4 class="svc-title">What we provide</h4>
+        <ul class="svc">
+          <li><b>Industrial waste collection and disposal</b><span>Collection, transportation and responsible disposal of non-hazardous industrial waste, including manufacturing and processing residues.</span></li>
+          <li><b>Construction and demolition waste</b><span>Collection, segregation, recycling and disposal of debris, concrete, wood, metals and other suitable demolition materials.</span></li>
+          <li><b>Industrial recycling and resource recovery</b><span>Recovery of metals, plastics, cardboard, packaging and other reusable industrial resources.</span></li>
+          <li><b>Containers and dumpster rentals</b><span>Appropriately sized bins, roll-off containers and dumpsters for facilities, construction projects and large-scale removal.</span></li>
+          <li><b>Industrial waste audits and sustainability</b><span>Waste stream assessments, minimization planning, diversion strategies and environmental advisory services.</span></li>
         </ul>
+        <div class="benefits">
+          <h4>Service benefits</h4>
+          <ul>
+            <li><i class="tick"><svg><use href="#i-check"/></svg></i><div><b>Reduced costs</b>Optimized collection, container use and disposal practices.</div></li>
+            <li><i class="tick"><svg><use href="#i-check"/></svg></i><div><b>Safer workplaces</b>Better housekeeping and fewer waste-related operational hazards.</div></li>
+            <li><i class="tick"><svg><use href="#i-check"/></svg></i><div><b>Compliance support</b>Proper segregation, handling, transportation and disposal.</div></li>
+            <li><i class="tick"><svg><use href="#i-check"/></svg></i><div><b>Resource recovery</b>Suitable materials diverted from landfill through recycling and reuse.</div></li>
+            <li><i class="tick"><svg><use href="#i-check"/></svg></i><div><b>Operational efficiency</b>Flexible schedules that minimize disruption to your operations.</div></li>
+            <li><i class="tick"><svg><use href="#i-check"/></svg></i><div><b>Measurable outcomes</b>Waste tracking, diversion performance and environmental reporting.</div></li>
+          </ul>
+        </div>
       </div>
 
       <!-- Recycling -->
-      <div class="tabpanel" role="tabpanel" id="panel-recycling" aria-labelledby="tab-recycling" hidden>
-        <div class="panel-grid">
-          <div class="panel-intro">
-            <h3>Reduce landfill. Maximize recovery.</h3>
-            <p>By sorting, reusing, and recovering materials, we help homeowners, businesses, institutions, and industries lower disposal costs and recycle more. This conserves resources and supports a circular economy.</p>
-            <div class="media panel-media" data-img="recycling" data-label="Sorting &amp; material recovery"></div>
-            <a class="btn btn-primary btn-sm" href="#contact" data-inquiry="Recycling and Waste Diversion">Plan a diversion program</a>
+      <div class="panel" role="tabpanel" id="recycling" aria-labelledby="t-recycling" tabindex="0" hidden>
+        <div class="panel-top">
+          <div class="gallery">
+            <figure><img data-img="rec" alt="Workers in JOGAT Green safety vests baling plastic bottles at a recycling facility"></figure>
+            <figcaption>Sorting and baling at a JOGAT Green recycling facility</figcaption>
           </div>
-          <div class="service-list">
-            <details open><summary>Recyclable Materials Collection &amp; Processing</summary><p>Collection and recovery of paper, plastics, metals, glass and other recyclable materials.</p></details>
-            <details><summary>Organic Waste Diversion &amp; Composting</summary><p>Management of food scraps, yard waste and biodegradable materials for composting and resource recovery.</p></details>
-            <details><summary>Waste Sorting &amp; Resource Recovery</summary><p>Separation and recovery of reusable and recyclable materials to minimize landfill disposal.</p></details>
-            <details><summary>Electronic Waste &amp; Specialized Recycling</summary><p>Responsible collection and recycling of electronics, appliances and other designated materials.</p></details>
-            <details><summary>Waste Audits &amp; Diversion Program Development</summary><p>Waste assessments, customized recycling strategies and diversion performance monitoring.</p></details>
+          <div class="panel-intro">
+            <h3>Reducing waste. Recovering resources. Building a circular economy.</h3>
+            <p>We help homeowners, businesses, institutions and industries cut disposal costs, maximize recycling and reach their sustainability goals through effective segregation, reuse and resource recovery.</p>
+            <p>Our solutions promote responsible consumption and conserve natural resources.</p>
+            <p class="sig">Turning waste into resources for a greener tomorrow.</p>
+            <a class="btn btn-green" href="#contact" data-topic="Recycling and Waste Diversion">Plan a diversion program</a>
           </div>
         </div>
-        <ul class="chips" aria-label="Recycling benefits">
-          <li>Reduced landfill waste</li><li>Cost savings</li><li>Resource conservation</li><li>Measurable results</li><li>Environmental compliance</li><li>Circular economy</li>
+        <h4 class="svc-title">What we provide</h4>
+        <ul class="svc">
+          <li><b>Recyclable materials collection and processing</b><span>Collection and recovery of paper, plastics, metals, glass and other recyclables.</span></li>
+          <li><b>Organic waste diversion and composting</b><span>Management of food scraps, yard waste and biodegradable materials for composting and recovery.</span></li>
+          <li><b>Waste sorting and resource recovery</b><span>Separation of reusable and recyclable materials to minimize landfill disposal.</span></li>
+          <li><b>Electronic waste and specialized recycling</b><span>Responsible collection and recycling of electronics, appliances and other designated materials.</span></li>
+          <li><b>Waste audits and diversion programs</b><span>Waste assessments, customized recycling strategies and diversion performance monitoring.</span></li>
+        </ul>
+        <div class="benefits">
+          <h4>Service benefits</h4>
+          <ul>
+            <li><i class="tick"><svg><use href="#i-check"/></svg></i><div><b>Reduced landfill waste</b>Less disposal through recycling, composting and reuse.</div></li>
+            <li><i class="tick"><svg><use href="#i-check"/></svg></i><div><b>Cost savings</b>Lower expenses through efficient collection and material recovery.</div></li>
+            <li><i class="tick"><svg><use href="#i-check"/></svg></i><div><b>Resource conservation</b>Valuable materials recovered, less demand on natural resources.</div></li>
+            <li><i class="tick"><svg><use href="#i-check"/></svg></i><div><b>Measurable results</b>Recycling rates, diversion and environmental performance tracked.</div></li>
+            <li><i class="tick"><svg><use href="#i-check"/></svg></i><div><b>Environmental compliance</b>Responsible handling that supports regulatory requirements.</div></li>
+            <li><i class="tick"><svg><use href="#i-check"/></svg></i><div><b>Circular economy</b>Material reuse and sustainable resource management.</div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ROAD BAND ===== -->
+<section class="band" aria-label="Our approach">
+  <img data-img="road" alt="JOGAT Green collection truck on a mountain highway lined with forest">
+  <div class="wrap">
+    <div class="band-copy">
+      <h2>Beyond collection and disposal.</h2>
+      <p>We integrate waste diversion, renewable energy generation and resource recovery to maximize the environmental and economic value of waste, keeping material and emissions out of landfill.</p>
+      <a class="btn btn-line" href="#energy">See how organic waste becomes energy</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ENERGY ===== -->
+<section class="sec energy" id="energy">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="kicker">Biogas and waste-to-energy</span>
+        <h2>From organic waste to clean energy.</h2>
+      </div>
+      <p>Organic waste is a valuable resource. Through anaerobic digestion, innovative technologies and strategic partnerships, we support the recovery of energy from food waste, agricultural residues, animal manure and other suitable biodegradable materials.</p>
+    </div>
+    <figure class="energy-pano" style="margin:0 0 clamp(2.5rem,5vw,4rem)"><img data-img="bio2" alt="Aerial view of a JOGAT Green biogas facility with twelve digesters beside farmland"></figure>
+    <ol class="flow" style="list-style:none;padding:0;margin:0">
+      <li><h3>Feedstock management</h3><p>Collection, segregation and preparation of suitable organic waste for biogas production.</p></li>
+      <li><h3>Anaerobic digestion</h3><p>Converting biodegradable waste into biogas through controlled biological processes that operate without oxygen.</p></li>
+      <li><h3>Renewable energy recovery</h3><p>Using biogas for electricity and heating, with potential upgrading into renewable natural gas (RNG).</p></li>
+      <li><h3>Digestate and resource recovery</h3><p>Responsible treatment and beneficial use of suitable by-products as soil amendments or fertilizers, subject to quality and regulatory requirements.</p></li>
+    </ol>
+    <div class="energy-foot">
+      <figure><img data-img="bio1" alt="Aerial view of a JOGAT Green biogas plant with three digesters beside agricultural buildings"></figure>
+      <div>
+        <h3>Biogas project development and advisory</h3>
+        <p>Project planning, feasibility assessment, technology evaluation and sustainability consulting for organic waste-to-energy initiatives.</p>
+        <ul class="outcomes">
+          <li>Lower greenhouse gas emissions</li>
+          <li>Less organic waste in landfill</li>
+          <li>A more resilient energy future</li>
+        </ul>
+        <a class="btn btn-lime" href="#contact" data-topic="Biogas and Waste-to-Energy">Discuss a biogas project</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SUSTAINABILITY CONSULTING ===== -->
+<section class="sec" id="sustainability">
+  <div class="wrap esc">
+    <div class="esc-media">
+      <figure><img data-img="esc" alt="Glass globe resting on moss in a sunlit forest"></figure>
+      <div class="scope" aria-label="GHG emissions scopes assessed">
+        <span><b>Scope 1</b>Direct</span>
+        <span><b>Scope 2</b>Purchased energy</span>
+        <span><b>Scope 3</b>Relevant value chain</span>
+      </div>
+    </div>
+    <div>
+      <span class="kicker">Environmental sustainability consulting</span>
+      <h2>Smarter environmental strategies. Measurable results. Lasting impact.</h2>
+      <p style="color:var(--muted);font-size:1.08rem;margin-top:1.2rem">We help businesses, institutions, industries and communities minimize environmental impact, improve resource efficiency and achieve their sustainability goals.</p>
+      <ul class="esc-list">
+        <li><b>GHG emissions auditing and assessment</b><span>Evaluating carbon footprints, identifying major emission sources and assessing emissions across Scope 1, Scope 2 and relevant Scope 3 activities.</span></li>
+        <li><b>GHG emissions reduction strategies</b><span>Practical, measurable strategies to reduce carbon emissions, improve energy efficiency and support decarbonization goals.</span></li>
+        <li><b>Waste audits and management planning</b><span>Assessing waste generation, disposal practices and opportunities for recycling, diversion and recovery.</span></li>
+        <li><b>Environmental compliance and advisory</b><span>Understanding applicable regulations, compliance obligations and responsible operating practices.</span></li>
+        <li><b>Sustainability reporting and monitoring</b><span>Environmental performance indicators, GHG inventories, sustainability reporting and progress tracking.</span></li>
+        <li><b>Resource efficiency and circular economy</b><span>Reducing material consumption, optimizing resource use and minimizing environmental waste.</span></li>
+      </ul>
+      <ul class="commit">
+        <li><b>Tailored solutions</b>Practical strategies matched to your operations and goals.</li>
+        <li><b>Emissions expertise</b>Data-driven assessments with actionable recommendations.</li>
+        <li><b>Compliance and results</b>Reporting support and continuous performance improvement.</li>
+      </ul>
+      <p class="sig">Measuring environmental impact. Reducing emissions. Building a sustainable future.</p>
+      <a class="btn btn-green" href="#contact" data-topic="Environmental Sustainability Consulting">Book a sustainability consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BRIDGE ===== -->
+<section class="bridge" aria-labelledby="bridge-title">
+  <div class="wrap bridge-in">
+    <div class="bridge-side">
+      <div class="who"><svg class="mono" aria-hidden="true"><use href="#mono-g"/></svg>JOGAT Green</div>
+      <h3>Environmental performance</h3>
+      <p>GHG inventories, waste tracking, diversion rates and environmental indicators gathered from your operations.</p>
+    </div>
+    <div class="bridge-mid">
+      <svg class="ring" viewBox="0 0 72 72" aria-hidden="true"><circle cx="28" cy="36" r="20" fill="none" stroke="#8CC63F" stroke-width="2.5"/><circle cx="44" cy="36" r="20" fill="none" stroke="#C9A35A" stroke-width="2.5"/></svg>
+      <h2 id="bridge-title">Sustainability reporting</h2>
+      <p>Where our two practices meet. Environmental data and financial reporting, prepared side by side.</p>
+    </div>
+    <div class="bridge-side">
+      <div class="who"><svg class="mono" aria-hidden="true"><use href="#mono-c"/></svg>JOGAT Consulting</div>
+      <h3>Financial reporting</h3>
+      <p>Financial statements, management reporting and KPI development that give sustainability results a sound financial footing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BUSINESS ADVISORY ===== -->
+<section class="sec biz" id="business">
+  <div class="wrap">
+    <div class="biz-intro">
+      <div>
+        <span class="kicker"><svg class="mono" aria-hidden="true"><use href="#mono-c"/></svg>JOGAT Consulting</span>
+        <h2>Financial clarity, confidence and sustainable growth.</h2>
+      </div>
+      <div>
+        <p>We provide comprehensive accounting and financial management solutions that help businesses, organizations and entrepreneurs achieve financial stability, operational efficiency and sustainable growth.</p>
+        <p>Our services span bookkeeping, financial reporting, tax planning, payroll administration, budgeting, financial analysis and strategic advisory, combining expertise and accuracy to simplify complexity, strengthen compliance and support informed decisions.</p>
+      </div>
+    </div>
+
+    <figure class="biz-hero" style="margin:0 0 clamp(2.5rem,5vw,3.5rem)">
+      <img data-img="acc" alt="JOGAT Consulting advisors reviewing financials with clients around a laptop">
+      <figcaption>We go beyond managing numbers. We help you build a stronger financial future.</figcaption>
+    </figure>
+
+    <div class="explorer" data-explorer>
+      <div class="tabs" role="tablist" aria-label="Business advisory services">
+        <button class="tab" role="tab" id="t-accounting" aria-controls="accounting" aria-selected="true"><b>Accounting &amp; bookkeeping</b><small>Accurate records, clear reporting</small></button>
+        <button class="tab" role="tab" id="t-tax" aria-controls="tax" aria-selected="false" tabindex="-1"><b>Tax planning &amp; compliance</b><small>Corporate and personal</small></button>
+        <button class="tab" role="tab" id="t-advisory" aria-controls="advisory" aria-selected="false" tabindex="-1"><b>Financial management &amp; advisory</b><small>Insight for decisions</small></button>
+        <button class="tab" role="tab" id="t-training" aria-controls="training" aria-selected="false" tabindex="-1"><b>Training &amp; capacity development</b><small>Skills that last</small></button>
+      </div>
+
+      <div class="panel" role="tabpanel" id="accounting" aria-labelledby="t-accounting" tabindex="0">
+        <div class="panel-top">
+          <div class="panel-intro">
+            <h3>Accounting and bookkeeping services</h3>
+            <p>Reliable accounting that keeps your financial records accurate, your reporting transparent and your financial management effective.</p>
+            <a class="btn btn-gold" href="#contact" data-topic="Accounting and Bookkeeping" data-practice="business">Talk to an accountant</a>
+          </div>
+          <ul class="svc" style="grid-template-columns:1fr">
+            <li><b>General ledger maintenance and transaction recording</b></li>
+            <li><b>Accounts payable and receivable management</b></li>
+            <li><b>Bank and credit card reconciliations</b></li>
+            <li><b>Financial statement preparation</b></li>
+            <li><b>Month-end and year-end closing</b></li>
+            <li><b>Accounting system setup, implementation and optimization</b></li>
+            <li><b>Records cleanup and catch-up services</b></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="tax" aria-labelledby="t-tax" tabindex="0" hidden>
+        <div class="panel-top">
+          <div class="gallery"><figure><img data-img="tax" alt="Advisor and client reviewing tax documents with a calculator and spreadsheet"></figure></div>
+          <div class="panel-intro">
+            <h3>Tax planning, preparation and compliance</h3>
+            <p>We help businesses and individuals navigate tax obligations, minimize tax risks and identify opportunities for tax efficiency.</p>
+            <a class="btn btn-gold" href="#contact" data-topic="Tax Planning, Preparation and Compliance" data-practice="business">Plan your taxes with us</a>
+          </div>
+        </div>
+        <h4 class="svc-title">What we provide</h4>
+        <ul class="svc">
+          <li><b>Corporate and personal income tax preparation</b></li>
+          <li><b>GST/HST and provincial sales tax reporting</b></li>
+          <li><b>Tax planning and advisory services</b></li>
+          <li><b>Tax compliance reviews</b></li>
+          <li><b>CRA correspondence and audit support</b></li>
+          <li><b>Deductions, credits and incentive assessments</b></li>
+          <li><b>Tax recordkeeping and filing support</b></li>
+        </ul>
+      </div>
+
+      <div class="panel" role="tabpanel" id="advisory" aria-labelledby="t-advisory" tabindex="0" hidden>
+        <div class="panel-top">
+          <div class="gallery"><figure><img data-img="fin" alt="Consultant presenting financial performance charts to a client team"></figure></div>
+          <div class="panel-intro">
+            <h3>Financial management and business advisory</h3>
+            <p>We turn financial information into actionable insight that improves profitability, strengthens financial controls and supports sustainable growth.</p>
+            <a class="btn btn-gold" href="#contact" data-topic="Financial Management and Business Advisory" data-practice="business">Request advisory support</a>
+          </div>
+        </div>
+        <h4 class="svc-title">What we provide</h4>
+        <ul class="svc">
+          <li><b>Financial planning, budgeting and forecasting</b></li>
+          <li><b>Cash flow planning and management</b></li>
+          <li><b>Financial performance and profitability analysis</b></li>
+          <li><b>Cost management and optimization</b></li>
+          <li><b>Business plans and financial projections</b></li>
+          <li><b>Investment appraisal and feasibility analysis</b></li>
+          <li><b>Management reporting and KPI development</b></li>
+          <li><b>Strategic financial advisory and decision support</b></li>
+        </ul>
+      </div>
+
+      <div class="panel" role="tabpanel" id="training" aria-labelledby="t-training" tabindex="0" hidden>
+        <div class="panel-top">
+          <div class="gallery"><figure><img data-img="trn" alt="Trainer leading a project planning workshop in front of a whiteboard"></figure></div>
+          <div class="panel-intro">
+            <h3>Professional training and capacity development</h3>
+            <p>Practical training for professionals, entrepreneurs and organizations that strengthens technical expertise, professional competence and organizational performance.</p>
+            <a class="btn btn-gold" href="#contact" data-topic="Professional Training and Capacity Development" data-practice="business">Ask about training</a>
+          </div>
+        </div>
+        <h4 class="svc-title">Programs</h4>
+        <ul class="svc">
+          <li><b>Accounting and financial management training</b></li>
+          <li><b>Bookkeeping and accounting software training</b></li>
+          <li><b>Project management and PMP certification preparation</b></li>
+          <li><b>Financial literacy and business management workshops</b></li>
+          <li><b>Budgeting, cost control and financial reporting training</b></li>
+          <li><b>Corporate professional development programs</b></li>
+          <li><b>Customized organizational training and capacity building</b></li>
         </ul>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ============ BIOGAS / CLEAN ENERGY ============ -->
-<section class="section section-dark energy" id="energy">
-  <div class="container energy-grid">
-    <div class="energy-copy">
-      <p class="eyebrow reveal">Biogas &amp; waste-to-energy</p>
-      <h2 class="reveal" style="--i:1">From organic waste to clean energy.</h2>
-      <p class="reveal" style="--i:2">Through modern waste management technologies and strategic partnerships, JOGAT Green Inc. helps recover energy from food waste, agricultural residues, animal manure, and other biodegradable materials. This can reduce landfill use and greenhouse gas emissions.</p>
-      <a class="btn btn-primary reveal" style="--i:3" href="#contact" data-inquiry="Biogas and Waste-to-Energy">Discuss a biogas project</a>
-    </div>
+    <ul class="why" aria-label="Why choose JOGAT Consulting">
+      <li><h3>Professional expertise</h3><p>Practical, reliable and results-driven financial solutions.</p></li>
+      <li><h3>Customized services</h3><p>Flexible solutions tailored to your organization’s unique needs.</p></li>
+      <li><h3>Accuracy and compliance</h3><p>A commitment to financial integrity, transparency and regulatory compliance.</p></li>
+      <li><h3>Strategic partnership</h3><p>Beyond accounting, we provide insights that help your business grow.</p></li>
+    </ul>
 
-    <ol class="flow" aria-label="Biogas value chain">
-      <li class="reveal"><span class="flow-n">1</span><div><h3>Feedstock management</h3><p>Collection, segregation and preparation of suitable organic waste for biogas production.</p></div></li>
-      <li class="reveal" style="--i:1"><span class="flow-n">2</span><div><h3>Anaerobic digestion</h3><p>Converting biodegradable waste into biogas through controlled biological processes that operate without oxygen.</p></div></li>
-      <li class="reveal" style="--i:2"><span class="flow-n">3</span><div><h3>Renewable energy recovery</h3><p>Using biogas for electricity generation, heating and potential upgrading into renewable natural gas (RNG).</p></div></li>
-      <li class="reveal" style="--i:3"><span class="flow-n">4</span><div><h3>Digestate &amp; resource recovery</h3><p>Responsible treatment and beneficial use of suitable by-products as soil amendments or fertilizers, subject to quality and regulatory requirements.</p></div></li>
-    </ol>
-  </div>
-  <div class="container">
-    <div class="energy-banner reveal">
-      <div class="media" data-img="energy" data-label="Biogas / anaerobic digestion facility"></div>
-      <div class="energy-banner-text">
-        <h3>Biogas project development &amp; advisory</h3>
-        <p>Project planning, feasibility assessments, technology reviews, and sustainability advice for organic waste-to-energy projects.</p>
-        <ul class="chips chips-light"><li>Lower GHG emissions</li><li>Less organic waste landfilled</li><li>Renewable energy generation</li></ul>
+    <div class="principal">
+      <div class="card-img"><img data-img="card" alt="JOGAT Consulting business card for Joseph Oluwadebi, PhD, Principal Consultant"></div>
+      <div>
+        <h3>Joseph Oluwadebi, PhD</h3>
+        <p class="role">Principal Consultant, JOGAT Consulting</p>
+        <p>Your financial success is our priority. We do more than manage financial records: we partner with you to strengthen financial performance, simplify business operations and create lasting value.</p>
+        <ul class="contact-lines">
+          <li><svg aria-hidden="true"><use href="#i-pin"/></svg><span>45 Hughes Crescent, Winnipeg, MB</span></li>
+          <li><svg aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+12049604045">204-960-4045</a></li>
+          <li><svg aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:consultancy@jogatgreenconsult.com">consultancy@jogatgreenconsult.com</a></li>
+          <li><svg aria-hidden="true"><use href="#i-web"/></svg><a href="https://www.jogatgreenconsult.com" target="_blank" rel="noopener">www.jogatgreenconsult.com</a></li>
+        </ul>
+        <a class="btn btn-gold" href="#contact" data-practice="business">Book a consultation</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ CONSULTING ============ -->
-<section class="section" id="consulting">
-  <div class="container">
-    <header class="section-head reveal">
-      <p class="eyebrow">Environmental sustainability consulting</p>
-      <h2>Smarter strategies. Measurable results.</h2>
-      <p>We help businesses, institutions, industries and communities minimize environmental impact, improve resource efficiency and reach their sustainability goals.</p>
-    </header>
-
-    <div class="consult">
-      <article class="consult-feature reveal"><div class="media" data-img="consulting"></div>
-        <span class="scope-tag">Scope 1 · Scope 2 · relevant Scope 3</span>
-        <h3>GHG Emissions Auditing &amp; Assessment</h3>
-        <p>Evaluating organizational carbon footprints, identifying major emission sources and assessing greenhouse gas emissions across Scope 1, Scope 2 and relevant Scope 3 activities.</p>
-        <h4>Then reduce them</h4>
-        <p>Practical, measurable strategies to cut carbon emissions, improve energy efficiency and support decarbonization goals.</p>
-      </article>
-      <ul class="consult-list">
-        <li class="reveal"><h4>Waste Audits &amp; Management Planning</h4><p>Assessing waste generation, disposal practices and opportunities for recycling, diversion and recovery.</p></li>
-        <li class="reveal" style="--i:1"><h4>Environmental Compliance &amp; Advisory</h4><p>Understanding applicable regulations, compliance obligations and responsible operating practices.</p></li>
-        <li class="reveal" style="--i:2"><h4>Reporting &amp; Performance Monitoring</h4><p>Environmental performance indicators, GHG inventories, sustainability reporting and progress tracking.</p></li>
-        <li class="reveal" style="--i:3"><h4>Resource Efficiency &amp; Circular Economy</h4><p>Reducing material consumption, optimizing resource use and minimizing environmental waste.</p></li>
-      </ul>
+<!-- ===== ABOUT ===== -->
+<section class="sec sec-tint" id="about">
+  <div class="wrap about">
+    <div>
+      <h2>Innovation. Sustainability. Excellence.</h2>
+      <p class="about-lede">We help organizations turn environmental and financial challenges into opportunities for operational efficiency, cost savings, emissions reduction and long-term sustainability.</p>
+    </div>
+    <div class="about-cols">
+      <div>
+        <h3><svg class="mono" aria-hidden="true"><use href="#mono-g"/></svg>JOGAT Green Inc.</h3>
+        <p>Waste management for homes, businesses, institutions and industry, extending beyond collection into recycling, renewable energy from organic waste and sustainability advisory. We focus on resource efficiency, environmental protection and a transition toward a circular economy.</p>
+      </div>
+      <div>
+        <h3><svg class="mono" aria-hidden="true"><use href="#mono-c"/></svg>JOGAT Consulting</h3>
+        <p>Accounting, taxation, financial and business advisory, and sustainability reporting led by Principal Consultant Joseph Oluwadebi, PhD. We combine professional expertise, accuracy and practical solutions so clients can make informed decisions with confidence.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ APPROACH ============ -->
-<section class="section section-tint" id="approach">
-  <div class="container approach">
-    <header class="reveal">
-      <p class="eyebrow">Our approach</p>
-      <h2>A circular approach that pays back.</h2>
-      <p>We combine waste diversion, renewable energy, and resource recovery to increase the environmental and economic value of waste. This approach goes beyond conventional collection and disposal.</p>
-    </header>
-    <dl class="benefits">
-      <div class="reveal"><dt>Cost efficiency</dt><dd>Optimized collection schedules, fewer unnecessary pickups and lower disposal costs.</dd></div>
-      <div class="reveal" style="--i:1"><dt>Regulatory compliance</dt><dd>Proper handling, segregation and disposal in line with applicable regulations.</dd></div>
-      <div class="reveal" style="--i:2"><dt>Cleaner, safer sites</dt><dd>Less accumulation, odours, sanitation concerns and workplace hazards.</dd></div>
-      <div class="reveal"><dt>Higher diversion</dt><dd>Recycling, reuse and recovery programs that keep material out of landfill.</dd></div>
-      <div class="reveal" style="--i:1"><dt>Tailored service</dt><dd>Flexible schedules and right-sized containers for each facility.</dd></div>
-      <div class="reveal" style="--i:2"><dt>Measurable performance</dt><dd>Tracking of waste generation, recycling rates and diversion for reporting.</dd></div>
-    </dl>
-  </div>
-</section>
-
-<!-- ============ ABOUT ============ -->
-<section class="section" id="about">
-  <div class="container about">
-    <div class="media about-media reveal" data-img="about" data-label="Team / fleet / operations"></div>
-    <div class="about-copy">
-      <p class="eyebrow reveal">About JOGAT Green Inc.</p>
-      <h2 class="reveal" style="--i:1">Innovation. Sustainability. Environmental excellence.</h2>
-      <p class="reveal" style="--i:2">We deliver innovative, reliable and environmentally responsible waste management solutions that promote resource efficiency, environmental protection and sustainable communities.</p>
-      <p class="reveal" style="--i:3">We serve homeowners and multifamily communities, businesses and institutions, and industrial operations. Our work extends beyond collection to recycling, renewable energy from organic waste, and sustainability advice.</p>
-      <p class="callout reveal" style="--i:4">We help organizations turn environmental challenges into opportunities for operational efficiency, cost savings, emissions reduction and long-term sustainability.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CONTACT ============ -->
-<section class="section section-dark contact" id="contact">
-  <div class="container contact-grid">
-    <div class="contact-copy">
-      <p class="eyebrow reveal">Contact &amp; business inquiries</p>
-      <h2 class="reveal" style="--i:1">Let’s build a cleaner, greener operation.</h2>
-      <p class="reveal" style="--i:2">Tell us about your property, facility, or project. We can help with routine collection, diversion programs, biogas initiatives, and emissions audits.</p>
-      <ul class="contact-details reveal" style="--i:3">
-        <li><span>Phone</span><a href="tel:+12049604045">204-960-4045</a></li>
-        <li><span>Website</span><a href="https://www.jogatgreen.com" target="_blank" rel="noopener">www.jogatgreen.com</a></li>
-      </ul>
+<!-- ===== CONTACT ===== -->
+<section class="sec" id="contact">
+  <div class="wrap contact">
+    <div>
+      <h2>Let’s talk about your property, project or business.</h2>
+      <p style="color:var(--muted);font-size:1.08rem;margin-top:1.2rem">Whether you need routine collection, a diversion program, a biogas initiative, an emissions audit or help with your books and taxes, tell us what you need and we’ll follow up.</p>
+      <div class="desk">
+        <h3><svg class="mono" aria-hidden="true"><use href="#mono-g"/></svg>JOGAT Green Inc.</h3>
+        <ul>
+          <li><svg aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+12049604045">204-960-4045</a></li>
+          <li><svg aria-hidden="true"><use href="#i-web"/></svg><a href="https://www.jogatgreen.com" target="_blank" rel="noopener">www.jogatgreen.com</a></li>
+        </ul>
+      </div>
+      <div class="desk gold">
+        <h3><svg class="mono" aria-hidden="true"><use href="#mono-c"/></svg>JOGAT Consulting</h3>
+        <ul>
+          <li><svg aria-hidden="true"><use href="#i-pin"/></svg><span>45 Hughes Crescent, Winnipeg, MB</span></li>
+          <li><svg aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+12049604045">204-960-4045</a></li>
+          <li><svg aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:consultancy@jogatgreenconsult.com">consultancy@jogatgreenconsult.com</a></li>
+          <li><svg aria-hidden="true"><use href="#i-web"/></svg><a href="https://www.jogatgreenconsult.com" target="_blank" rel="noopener">www.jogatgreenconsult.com</a></li>
+        </ul>
+      </div>
     </div>
 
-    <form class="form reveal" id="inquiry-form" novalidate>
-      <div class="field">
-        <label for="f-name">Full name</label>
-        <input id="f-name" name="name" type="text" autocomplete="name" required>
-        <p class="error" id="e-name" role="alert"></p>
+    <form id="form" novalidate>
+      <fieldset class="practice-pick">
+        <legend>Which practice can help?</legend>
+        <label><input type="radio" name="practice" value="env" checked><span>Environmental services<small>JOGAT Green Inc.</small></span></label>
+        <label><input type="radio" name="practice" value="business"><span>Business advisory<small>JOGAT Consulting</small></span></label>
+      </fieldset>
+      <div class="fields">
+        <div class="field"><label for="f-name">Full name</label><input id="f-name" name="name" autocomplete="name" required><span class="err" id="e-name"></span></div>
+        <div class="field"><label for="f-org">Organization <i>(optional)</i></label><input id="f-org" name="org" autocomplete="organization"></div>
+        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required><span class="err" id="e-email"></span></div>
+        <div class="field"><label for="f-phone">Phone <i>(optional)</i></label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+        <div class="field full"><label for="f-topic">Service</label><select id="f-topic" name="topic" required></select><span class="err" id="e-topic"></span></div>
+        <div class="field full"><label for="f-msg">How can we help?</label><textarea id="f-msg" name="msg" required placeholder="Location, type of property or business, and what you need"></textarea><span class="err" id="e-msg"></span></div>
       </div>
-      <div class="field">
-        <label for="f-org">Organization <span class="opt">(optional)</span></label>
-        <input id="f-org" name="org" type="text" autocomplete="organization">
+      <div class="form-foot">
+        <small>Prototype form: it checks your entries but doesn’t send anything yet.</small>
+        <button class="btn btn-green" type="submit">Send inquiry</button>
       </div>
-      <div class="field-row">
-        <div class="field">
-          <label for="f-email">Email</label>
-          <input id="f-email" name="email" type="email" autocomplete="email" required>
-          <p class="error" id="e-email" role="alert"></p>
-        </div>
-        <div class="field">
-          <label for="f-phone">Phone</label>
-          <input id="f-phone" name="phone" type="tel" autocomplete="tel" required>
-          <p class="error" id="e-phone" role="alert"></p>
-        </div>
-      </div>
-      <div class="field">
-        <label for="f-topic">I’m interested in</label>
-        <select id="f-topic" name="topic" required>
-          <option value="">Select a service…</option>
-          <option>Residential Waste Management</option>
-          <option>Commercial and Institutional Waste Management</option>
-          <option>Industrial Waste Management</option>
-          <option>Recycling and Waste Diversion</option>
-          <option>Biogas and Waste-to-Energy</option>
-          <option>Environmental Sustainability Consulting</option>
-          <option>Other / not sure yet</option>
-        </select>
-        <p class="error" id="e-topic" role="alert"></p>
-      </div>
-      <div class="field">
-        <label for="f-msg">Project details</label>
-        <textarea id="f-msg" name="message" rows="4" required minlength="10"></textarea>
-        <p class="error" id="e-msg" role="alert"></p>
-      </div>
-      <button class="btn btn-primary" type="submit">Send inquiry</button>
-      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      <div class="status" id="status" role="status" aria-live="polite"></div>
     </form>
   </div>
 </section>
 </main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <a class="brand" href="#top"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c7 3 11 8 11 14a11 11 0 0 1-22 0C5 11 9 6 16 3z" fill="currentColor"/></svg><span>JOGAT <b>Green</b> Inc.</span></a>
-      <p>Measuring Environmental Impact. Reducing Emissions. Building a Sustainable Future.</p>
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top"><svg class="mono" aria-hidden="true"><use href="#mono-g"/></svg><span class="brand-text"><b>JOGAT Green</b><small>Environmental services &amp; business advisory</small></span></a>
+        <p class="motto">Turning waste into resources for a greener tomorrow.</p>
+      </div>
+      <nav aria-label="Environmental services"><h4>Environmental services</h4><ul>
+        <li><a href="#residential">Residential</a></li><li><a href="#commercial">Commercial &amp; institutional</a></li><li><a href="#industrial">Industrial</a></li><li><a href="#recycling">Recycling &amp; diversion</a></li><li><a href="#energy">Biogas &amp; waste-to-energy</a></li><li><a href="#sustainability">Sustainability consulting</a></li></ul></nav>
+      <nav aria-label="Business advisory"><h4>Business advisory</h4><ul>
+        <li><a href="#accounting">Accounting &amp; bookkeeping</a></li><li><a href="#tax">Tax planning &amp; compliance</a></li><li><a href="#advisory">Financial management</a></li><li><a href="#training">Training &amp; development</a></li></ul></nav>
+      <div><h4>Contact</h4><ul>
+        <li><a href="tel:+12049604045">204-960-4045</a></li>
+        <li><a href="https://www.jogatgreen.com" target="_blank" rel="noopener">jogatgreen.com</a></li>
+        <li><a href="https://www.jogatgreenconsult.com" target="_blank" rel="noopener">jogatgreenconsult.com</a></li></ul></div>
     </div>
-    <nav class="footer-col" aria-label="Services">
-      <h4>Services</h4>
-      <a href="#services">Waste Management</a><a href="#services">Recycling &amp; Diversion</a><a href="#energy">Biogas &amp; Waste-to-Energy</a><a href="#consulting">Sustainability Consulting</a>
-    </nav>
-    <nav class="footer-col" aria-label="Company">
-      <h4>Company</h4>
-      <a href="#divisions">Divisions</a><a href="#approach">Our Approach</a><a href="#about">About</a>
-    </nav>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <a href="tel:+12049604045">204-960-4045</a><a href="https://www.jogatgreen.com" target="_blank" rel="noopener">www.jogatgreen.com</a>
-    </div>
-    <p class="legal">&copy; <span id="year">2026</span> JOGAT Green Inc. All rights reserved.</p>
+    <div class="foot-base"><span>© <span id="yr">2026</span> JOGAT Green Inc. All rights reserved.</span><span>Innovation. Sustainability. Environmental excellence.</span></div>
   </div>
 </footer>

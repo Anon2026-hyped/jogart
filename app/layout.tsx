@@ -1,11 +1,10 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'JOGAT Green Inc.',
+  title: 'JOGAT Green Inc. | Environmental services and business advisory',
   description:
-    'JOGAT Green Inc. delivers waste management, recycling, biogas and waste-to-energy solutions, and environmental sustainability consulting.',
+    'JOGAT Green Inc. delivers waste management, recycling, biogas and sustainability consulting. Through JOGAT Consulting, we provide accounting, tax, financial advisory and professional training.',
 };
 
 export default function RootLayout({
@@ -23,14 +22,11 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..600&family=DM+Mono:wght@400;500&family=Figtree:wght@400..700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
       </head>
       <body>
-        <Script id="enable-js" strategy="beforeInteractive">
-          {'document.documentElement.classList.add("js");'}
-        </Script>
         {children}
       </body>
     </html>
