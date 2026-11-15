@@ -93,7 +93,10 @@ export default function ConsultingPage() {
         <div className="wrap esc">
           <div className="esc-media">
             <figure>
-              <img data-img="card" alt="JOGAT Consulting advisors reviewing client financial information" />
+              <img
+                src="/images/jogat-consulting-card.jpg"
+                alt="JOGAT Consulting profile card with advisory services and contact information"
+              />
             </figure>
           </div>
           <div>

@@ -18,7 +18,6 @@ export default function SiteChrome({
             <a href="/">Home</a>
             <a href="/services">Services</a>
             <a href="/consulting">Consulting</a>
-            <a href="/departments">Departments</a>
             <a href="/about">About</a>
             <a href="/contact" className="btn btn-lime">Contact</a>
           </nav>
@@ -47,7 +46,7 @@ export default function SiteChrome({
             <nav aria-label="Business advisory"><h4>Business advisory</h4><ul>
               <li><a href="/consulting">Consulting overview</a></li><li><a href="/services/accounting">Accounting &amp; bookkeeping</a></li><li><a href="/services/tax">Tax planning &amp; compliance</a></li><li><a href="/services/financial-advisory">Financial management</a></li><li><a href="/services/professional-training">Training &amp; development</a></li>
             </ul></nav>
-            <div><h4>Organisation</h4><ul><li><a href="/departments">Departments</a></li><li><a href="/about">About us</a></li><li><a href="/contact">Contact both practices</a></li></ul></div>
+            <div><h4>Company</h4><ul><li><a href="/about">About us</a></li><li><a href="/contact">Contact both practices</a></li></ul></div>
           </div>
           <div className="foot-base"><span>© <span id="yr"></span> JOGAT Green Inc. All rights reserved.</span><span>Innovation. Sustainability. Environmental excellence.</span></div>
         </div>

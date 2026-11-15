@@ -21,7 +21,7 @@ const ROUTES: Record<string, string> = {
   consulting: '/consulting',
   energy: '/services/biogas',
   sustainability: '/services/sustainability',
-  business: '/departments',
+  business: '/consulting',
   about: '/about',
   contact: '/contact',
   residential: '/services/residential-waste',
