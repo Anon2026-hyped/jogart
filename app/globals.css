@@ -61,6 +61,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .links a{text-decoration:none;position:relative;padding:.35rem 0}
 .links a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:2px;background:var(--lime);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease)}
 .links a:not(.btn):hover::after,.links a:not(.btn).on::after{transform:scaleX(1)}
+.links a[aria-current="page"]:not(.btn){font-weight:700}
 .links a.biz::after{background:var(--gold)}
 .links a.btn{padding:.8rem 1.1rem}
 .tools{display:flex;align-items:center;gap:.5rem}
@@ -76,6 +77,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .links.open{opacity:1;visibility:visible;transform:none}
   .links a:not(.btn){padding:.95rem 0;border-bottom:1px solid var(--line);font-size:1.05rem}
   .links a:not(.btn)::after{display:none}
+  .links a.on:not(.btn){color:var(--brand)}
   .links .btn{margin-top:1rem;justify-content:center}
 }
 
@@ -114,7 +116,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .page-intro{padding:calc(var(--header-h) + 2.2rem) 0 3.2rem}
 .page-intro h1{max-width:18ch;font-size:clamp(2.35rem,5vw,4rem)}
 .page-intro> .wrap>p:last-child{max-width:68ch;color:var(--muted);font-size:1.08rem;margin:1rem 0 0}
-.breadcrumbs{display:flex;align-items:center;gap:.65rem;color:var(--muted);font-size:.88rem;margin:0 0 1.4rem}
+.breadcrumbs{color:var(--muted);font-size:.88rem;margin:0 0 1.4rem}
+.breadcrumbs ol{display:flex;align-items:center;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin:0}
+.breadcrumbs li+li::before{content:"/";margin-right:.5rem;color:var(--muted)}
+.breadcrumbs li[aria-current="page"]{color:var(--ink)}
 .breadcrumbs a{text-decoration:none}
 .breadcrumbs a:hover{text-decoration:underline}
 body:has(.page-intro) .header{background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:var(--ink);box-shadow:0 1px 0 var(--line)}

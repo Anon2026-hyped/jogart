@@ -30,6 +30,8 @@ export default async function ServiceDetailPage({ params }: Props) {
         eyebrow={`${service.practice} · Services`}
         title={service.title}
         description={service.description}
+        parent={{ label: 'Services', href: '/services' }}
+        currentLabel={service.title}
       />
       <div dangerouslySetInnerHTML={{ __html: getPageContent(service.sectionId, service.panel) }} />
     </main>

@@ -77,7 +77,8 @@ export function initializeSite() {
       linkPath === window.location.pathname ||
       (linkPath !== '/' && window.location.pathname.startsWith(`${linkPath}/`));
     link.classList.toggle('on', active);
-    if (active) link.setAttribute('aria-current', 'page');
+    if (linkPath === window.location.pathname) link.setAttribute('aria-current', 'page');
+    else if (active) link.setAttribute('aria-current', 'location');
     else link.removeAttribute('aria-current');
   });
 
@@ -97,6 +98,9 @@ export function initializeSite() {
       setMenu(false);
       menu.focus();
     }
+  });
+  document.addEventListener('pointerdown', (event) => {
+    if (menuOpen && !header.contains(event.target)) setMenu(false);
   });
   window.addEventListener('resize', () => {
     if (window.innerWidth > 1060) setMenu(false);

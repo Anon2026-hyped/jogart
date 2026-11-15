@@ -15,6 +15,7 @@ export default function SiteChrome({
             <span className="brand-text"><b>JOGAT Green</b><small>Environmental services &amp; business advisory</small></span>
           </a>
           <nav className="links" id="links" aria-label="Main">
+            <a href="/">Home</a>
             <a href="/services">Services</a>
             <a href="/consulting">Consulting</a>
             <a href="/departments">Departments</a>
